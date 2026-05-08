@@ -1,0 +1,341 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Spectral:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap');
+
+@layer base {
+  :root {
+    --void: #0a0806;
+    --deep-earth: #110e0a;
+    --amber: #c8822a;
+    --gold: #D4AF37;
+    --amber-glow: #e8a04a;
+    --ember: #ff6b2b;
+    --cream: #f0e8d8;
+    --mist: #a89880;
+    --silence: #5a4e40;
+    --border: rgba(200, 130, 42, 0.15);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0806;
+    color: #f0e8d8;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(200, 130, 42, 0.3);
+    color: #f0e8d8;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0806;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #5a4e40;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c8822a;
+  }
+}
+
+@layer components {
+  .grain-overlay {
+    position: relative;
+  }
+
+  .grain-overlay::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  .nmq-label {
+    font-family: 'Spectral', serif;
+    font-weight: 200;
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #a89880;
+  }
+
+  .nmq-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    color: #D4AF37;
+    line-height: 1.1;
+  }
+
+  .nmq-body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    color: #f0e8d8;
+    line-height: 1.7;
+  }
+
+  .amber-btn {
+    background: linear-gradient(135deg, #c8822a 0%, #D4AF37 100%);
+    color: #0a0806;
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.75rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .amber-btn:hover {
+    background: linear-gradient(135deg, #e8a04a 0%, #f0c84a 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 32px rgba(200, 130, 42, 0.3);
+  }
+
+  .amber-btn:active {
+    transform: scale(0.98) translateY(0);
+  }
+
+  .ghost-btn {
+    background: transparent;
+    color: #a89880;
+    font-family: 'Spectral', serif;
+    font-weight: 200;
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.75rem 2rem;
+    border: 1px solid rgba(200, 130, 42, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ghost-btn:hover {
+    border-color: rgba(200, 130, 42, 0.6);
+    color: #c8822a;
+    background: rgba(200, 130, 42, 0.05);
+  }
+
+  .nmq-card {
+    background: #110e0a;
+    border: 1px solid rgba(200, 130, 42, 0.12);
+    transition: border-color 0.3s ease;
+  }
+
+  .nmq-card:hover {
+    border-color: rgba(200, 130, 42, 0.28);
+  }
+
+  .pulse-amber {
+    animation: pulseAmber 2s ease-in-out infinite;
+  }
+
+  .pulse-slow {
+    animation: pulseAmber 4s ease-in-out infinite;
+  }
+
+  .pulse-ember {
+    animation: pulseAmber 8s ease-in-out infinite;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .light-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #c8822a;
+    box-shadow: 0 0 6px rgba(200, 130, 42, 0.8), 0 0 12px rgba(200, 130, 42, 0.4);
+  }
+
+  .light-dot-founding {
+    background: #D4AF37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.9), 0 0 16px rgba(212, 175, 55, 0.5);
+  }
+
+  .textarea-nmq {
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    color: #f0e8d8;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 1.9;
+    caret-color: #c8822a;
+  }
+
+  .textarea-nmq::placeholder {
+    color: #5a4e40;
+    font-style: italic;
+  }
+
+  .depth-bar {
+    height: 2px;
+    background: linear-gradient(90deg, #c8822a, #D4AF37);
+    transition: width 0.6s ease;
+  }
+
+  .ley-line {
+    stroke: rgba(200, 130, 42, 0.15);
+    stroke-width: 1;
+    stroke-dasharray: 4 8;
+    animation: leyFlow 8s linear infinite;
+  }
+
+  .node-glow {
+    filter: drop-shadow(0 0 8px rgba(200, 130, 42, 0.6));
+  }
+
+  .ritual-dawn {
+    --amber: #e8936a;
+    --gold: #f0c070;
+  }
+
+  .ritual-solstice {
+    --amber: #ff7a1a;
+    --gold: #ffb830;
+  }
+
+  .ritual-ember {
+    --amber: #cc3a1a;
+    --gold: #ff6b2b;
+  }
+
+  .ritual-midnight {
+    --amber: #4a6aaa;
+    --gold: #6a8acc;
+  }
+}
+
+@layer utilities {
+  .text-void { color: #0a0806; }
+  .text-cream { color: #f0e8d8; }
+  .text-mist { color: #a89880; }
+  .text-silence { color: #5a4e40; }
+  .text-amber { color: #c8822a; }
+  .text-gold { color: #D4AF37; }
+  .text-amber-glow { color: #e8a04a; }
+  .text-ember { color: #ff6b2b; }
+
+  .bg-void { background-color: #0a0806; }
+  .bg-deep-earth { background-color: #110e0a; }
+  .bg-amber { background-color: #c8822a; }
+  .bg-amber\/10 { background-color: rgba(200, 130, 42, 0.1); }
+  .bg-amber\/5 { background-color: rgba(200, 130, 42, 0.05); }
+  .bg-ember\/10 { background-color: rgba(255, 107, 43, 0.1); }
+
+  .border-amber { border-color: rgba(200, 130, 42, 0.25); }
+  .border-gold { border-color: rgba(212, 175, 55, 0.3); }
+  .border-silence { border-color: rgba(90, 78, 64, 0.4); }
+
+  .font-spectral {
+    font-family: 'Spectral', serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes pulseAmber {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(200, 130, 42, 0.8), 0 0 12px rgba(200, 130, 42, 0.4); }
+  50% { opacity: 0.5; box-shadow: 0 0 3px rgba(200, 130, 42, 0.4), 0 0 6px rgba(200, 130, 42, 0.2); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes leyFlow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -48; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes rotateY {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes particleDrift {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  33% { transform: translate(3px, -5px) scale(1.1); opacity: 1; }
+  66% { transform: translate(-3px, -8px) scale(0.9); opacity: 0.6; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.4), 0 0 80px rgba(200, 130, 42, 0.2); }
+}
+
+@keyframes scanLine {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100vh); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes svemirHaloMap {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes svemirRingMap {
+  0%, 100% { opacity: 0.25; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.12); }
+}
