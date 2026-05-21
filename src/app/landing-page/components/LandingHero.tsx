@@ -6,22 +6,46 @@ import Link from 'next/link';
 export default function LandingHero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animFrameRef = useRef<number>(0);
-  const [lightCount, setLightCount] = useState(0);
+  const [lightCount, setLightCount] = useState<number | null>(null);
 
-  // Animate light count
+  // Animate light count from live Supabase total (via /api/stats/lights)
   useEffect(() => {
-    const target = 1847;
-    const duration = 2400;
-    const start = Date.now();
-    const tick = () => {
-      const elapsed = Date.now() - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setLightCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(tick);
+    let cancelled = false;
+    let rafId = 0;
+
+    const runAnimation = (target: number) => {
+      if (cancelled || target <= 0) {
+        if (!cancelled) setLightCount(target);
+        return;
+      }
+      const duration = 2400;
+      const start = Date.now();
+      const tick = () => {
+        if (cancelled) return;
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setLightCount(Math.floor(eased * target));
+        if (progress < 1) rafId = requestAnimationFrame(tick);
+      };
+      rafId = requestAnimationFrame(tick);
     };
-    const timer = setTimeout(() => requestAnimationFrame(tick), 600);
-    return () => clearTimeout(timer);
+
+    fetch('/api/stats/lights')
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error('stats fetch failed'))))
+      .then((data: { total?: number }) => {
+        if (cancelled) return;
+        const total = typeof data.total === 'number' && data.total >= 0 ? data.total : 0;
+        setTimeout(() => runAnimation(total), 600);
+      })
+      .catch(() => {
+        if (!cancelled) setLightCount(0);
+      });
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   // Three.js-style pyramid on canvas
@@ -231,7 +255,7 @@ export default function LandingHero() {
           <span className="light-dot pulse-amber" />
           <span className="nmq-label text-mist">
             <span className="text-amber tabular-nums font-cormorant font-light text-xl" style={{ letterSpacing: '0.05em' }}>
-              {lightCount.toLocaleString()}
+              {lightCount === null ? '—' : lightCount.toLocaleString()}
             </span>
             {' '}lights burning on the pyramid
           </span>

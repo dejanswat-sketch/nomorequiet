@@ -15,6 +15,18 @@ const nodeStats = [
 export default function LandingLightCounter() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [totalLights, setTotalLights] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('/api/stats/lights')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { total?: number } | null) => {
+        if (data && typeof data.total === 'number' && data.total >= 0) {
+          setTotalLights(data.total);
+        }
+      })
+      .catch(() => setTotalLights(null));
+  }, []);
 
   useEffect(() => {
     const el = ref?.current;
@@ -91,7 +103,9 @@ export default function LandingLightCounter() {
           }`}
         >
           <p className="nmq-body text-mist text-base">
-            <span className="text-gold font-cormorant font-light text-2xl tabular-nums">1,847</span>
+            <span className="text-gold font-cormorant font-light text-2xl tabular-nums">
+              {totalLights === null ? '—' : totalLights.toLocaleString()}
+            </span>
             {' '}lights burning across the pyramid · {' '}
             <span className="text-amber">1,000</span> founding lights sealed
           </p>
