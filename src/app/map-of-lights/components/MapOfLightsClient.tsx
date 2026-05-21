@@ -228,7 +228,7 @@ export default function MapOfLightsClient() {
   }, []);
 
   return (
-    <div className="flex h-[calc(100vh-64px)] overflow-hidden">
+    <div className="flex flex-col md:flex-row h-[calc(100dvh-64px)] min-h-0 overflow-hidden">
       {/* Sidebar */}
       <MapSidebar
         nodes={NODES}
@@ -240,7 +240,7 @@ export default function MapOfLightsClient() {
       />
 
       {/* Map area */}
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden min-h-[45vh] md:min-h-0">
         {lightsLoading ? (
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="light-dot pulse-amber" style={{ width: '8px', height: '8px' }} />
@@ -268,7 +268,7 @@ export default function MapOfLightsClient() {
 
         {/* Featured Story Widget — bottom-right floating overlay */}
         {!selectedNode && (
-          <div className="absolute bottom-6 right-6 z-20 w-80">
+          <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-auto md:right-6 z-20 w-auto max-w-sm md:w-80">
             <FeaturedStoryWidget />
           </div>
         )}

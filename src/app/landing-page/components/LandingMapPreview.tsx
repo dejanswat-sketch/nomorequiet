@@ -57,7 +57,7 @@ export default function LandingMapPreview() {
           className={`relative nmq-card overflow-hidden transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
-          style={{ height: '420px', background: '#0d0b08' }}
+          style={{ height: 'min(420px, 55vh)', minHeight: '260px', background: '#0d0b08' }}
         >
           {/* SVG map */}
           <svg

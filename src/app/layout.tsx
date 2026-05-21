@@ -9,6 +9,8 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#0a0806',
 };
 
 export const metadata: Metadata = {
@@ -27,7 +29,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="grain-overlay bg-void text-cream font-cormorant antialiased">
+      <body
+        className="grain-overlay bg-void text-cream font-cormorant antialiased overflow-x-hidden"
+        style={{
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingRight: 'env(safe-area-inset-right)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingLeft: 'env(safe-area-inset-left)',
+        }}
+      >
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>

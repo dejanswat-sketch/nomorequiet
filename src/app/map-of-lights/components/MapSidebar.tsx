@@ -21,7 +21,7 @@ export default function MapSidebar({
   totalLights,
 }: MapSidebarProps) {
   return (
-    <div className="w-72 xl:w-80 flex flex-col border-r border-amber/10 bg-deep-earth/30 overflow-hidden">
+    <div className="w-full md:w-72 xl:w-80 flex flex-col border-b md:border-b-0 md:border-r border-amber/10 bg-deep-earth/30 overflow-hidden shrink-0 max-h-[38vh] md:max-h-none">
       {/* Header */}
       <div className="px-5 py-5 border-b border-amber/10">
         <p className="nmq-label mb-1" style={{ fontSize: '0.55rem', color: '#c8822a' }}>

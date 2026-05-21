@@ -13,7 +13,7 @@ export default function AppLayout({
   navVariant = 'solid',
 }: AppLayoutProps) {
   return (
-    <div className="min-h-screen bg-void flex flex-col">
+    <div className="min-h-screen bg-void flex flex-col overflow-x-hidden">
       {showNav && <AppNav variant={navVariant} />}
       <main className="flex-1">{children}</main>
     </div>

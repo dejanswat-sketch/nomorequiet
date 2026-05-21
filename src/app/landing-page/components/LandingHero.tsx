@@ -201,7 +201,7 @@ export default function LandingHero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden overflow-x-hidden px-4 sm:px-6">
       {/* Background gradient */}
       <div
         className="absolute inset-0"
@@ -212,15 +212,15 @@ export default function LandingHero() {
       />
 
       {/* Hero text */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <div className="relative z-10 text-center w-full max-w-3xl mx-auto">
         {/* Pyramid canvas — compact, sits above title */}
-        <div className="flex justify-center mb-0" style={{ height: '220px' }}>
+        <div className="flex justify-center mb-0 w-full" style={{ height: 'min(220px, 32vw)' }}>
           <canvas
             ref={canvasRef}
             width={600}
             height={220}
-            className="opacity-90"
-            style={{ maxWidth: '100%' }}
+            className="opacity-90 w-full max-w-[600px] h-auto"
+            style={{ maxWidth: '100%', height: 'auto' }}
             aria-label="Animated low-poly pyramid with amber light particles drifting inside the wireframe mesh"
           />
         </div>
@@ -229,7 +229,7 @@ export default function LandingHero() {
           43°46′N · 21°50′E · RTANJ, SERBIA
         </p>
         <h1
-          className="nmq-heading text-5xl md:text-7xl lg:text-8xl italic mb-8"
+          className="nmq-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic mb-6 sm:mb-8 break-words"
           style={{ lineHeight: '1.05' }}
         >
           NoMoreQuiet
