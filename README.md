@@ -1,4 +1,9 @@
-# Next.js
+# nomorequiet_5081 (NoMoreQuiet)
+
+Repository: [dejanswat-sketch/nomorequiet_5081](https://github.com/dejanswat-sketch/nomorequiet_5081).  
+Reflective writing app with an **English UI**. Local dev runs on **port 4028** (`npm run dev`).
+
+Copy `.env.example` to `.env` and add your Supabase/Stripe keys before running.
 
 A modern Next.js 15 application built with TypeScript and Tailwind CSS.
 
@@ -59,7 +64,7 @@ This project uses Tailwind CSS for styling with the following features:
 
 - `npm run dev` - Start development server on port 4028
 - `npm run build` - Build the application for production
-- `npm run start` - Start the development server
+- `npm run start` - Start production server (port 3000)
 - `npm run serve` - Start the production server
 - `npm run lint` - Run ESLint to check code quality
 - `npm run lint:fix` - Fix ESLint issues automatically
