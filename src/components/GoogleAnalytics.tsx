@@ -5,9 +5,10 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { trackPageView } from '@/lib/analytics';
 
-// NMQ 08.10.2026: ID je upisan direktno — env je bio prazan, pa se merenje NIKAD nije uključivalo.
-// Ako je env postavljen pri build-u, on i dalje ima prednost.
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-DT3W3GR67T';
+// NMQ 08.10.2026: ID je FIKSNO upisan — env je bio prazan (pa se merenje nije uključivalo),
+// a kad je env postojao nosio je drugi ID. Svi naši sajtovi šalju u isti GA4 property
+// (G-DT3W3GR67T), a razdvajaju se po hostname-u.
+const GA_ID = 'G-DT3W3GR67T';
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
