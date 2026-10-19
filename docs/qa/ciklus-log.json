@@ -1,0 +1,693 @@
+{
+  "startedAt": "2026-09-29T22:51:50.517Z",
+  "console": [
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/portal",
+      "type": "log",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized) http://localhost:3000/api/portal/check-limit"
+    },
+    {
+      "url": "/admin-panel",
+      "type": "log",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized) http://localhost:3000/api/admin/analytics"
+    },
+    {
+      "url": "/admin-panel",
+      "type": "log",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized) http://localhost:3000/api/admin/analytics"
+    },
+    {
+      "url": "/voices",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cpinned_at%2Canointed_at%2Ccreated_at%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc"
+    },
+    {
+      "url": "/voices",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cpinned_at%2Canointed_at%2Ccreated_at%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc"
+    },
+    {
+      "url": "/pricing",
+      "type": "log",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error) http://localhost:3000/api/deep-read/weekly-limit"
+    },
+    {
+      "url": "/landing-page",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/landing-page",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/landing-page",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/soul_stories?select=id%2Ctitle%2Ccontent%2Cuser_profiles%28nickname%2Cassigned_node%29&is_winner=eq.true&order=pinned_at.desc&limit=1"
+    },
+    {
+      "url": "/",
+      "type": "log",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED https://shmidovbjbvhcuolaksp.supabase.co/rest/v1/lights?select=*&order=created_at.desc"
+    },
+    {
+      "url": "/ova-strana-ne-postoji",
+      "type": "log",
+      "text": "WebSocket connection to 'wss://shmidovbjbvhcuolaksp.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNobWlkb3ZiamJ2aGN1b2xha3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczMzA4OTQsImV4cCI6MjA5MjkwNjg5NH0.nH3TmBNPhad71chZ1819gQbJLn2b9IdRGP57Isywaw"
+    },
+    {
+      "url": "/ova-strana-ne-postoji",
+      "type": "log",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:3000/ova-strana-ne-postoji"
+    }
+  ],
+  "exceptions": [],
+  "http": [
+    {
+      "url": "/portal",
+      "target": "http://localhost:3000/api/portal/check-limit",
+      "status": 401
+    },
+    {
+      "url": "/admin-panel",
+      "target": "http://localhost:3000/api/admin/analytics",
+      "status": 401
+    },
+    {
+      "url": "/admin-panel",
+      "target": "http://localhost:3000/api/admin/analytics",
+      "status": 401
+    },
+    {
+      "url": "/pricing",
+      "target": "http://localhost:3000/api/deep-read/weekly-limit",
+      "status": 500
+    },
+    {
+      "url": "/ova-strana-ne-postoji",
+      "target": "http://localhost:3000/ova-strana-ne-postoji",
+      "status": 404
+    }
+  ],
+  "failed": [
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/journal-screen",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/dashboard",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/portal",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/personal-arc",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/user-settings",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/admin-panel",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/voices",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/voices",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/voices",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/voices",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/voices",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/landing-page",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/",
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "blocked": null
+    },
+    {
+      "url": "/ova-strana-ne-postoji",
+      "error": "net::ERR_ABORTED",
+      "blocked": null
+    }
+  ],
+  "steps": [
+    {
+      "name": "01-pocetna",
+      "url": "http://localhost:3000/map-of-lights",
+      "title": "NoMoreQuiet — The Place Where Silence Finds Its Voice"
+    },
+    {
+      "name": "02-cvor-detalj",
+      "clicked": true,
+      "imaCijenu": false,
+      "imaBrojSvjetala": false
+    },
+    {
+      "name": "03-posle-cta-cvora",
+      "ctaClicked": true,
+      "stigaoNa": "/sign-up-login-screen"
+    },
+    {
+      "name": "04-begin-writing",
+      "clicked": true,
+      "stigaoNa": "/sign-up-login-screen"
+    },
+    {
+      "name": "05-gost-journal",
+      "url": "http://localhost:3000/journal-screen",
+      "znakovaTeksta": 406,
+      "vidiSePrazno": false,
+      "imaPozivNaPrijavu": true
+    },
+    {
+      "name": "06-gost-dashboard",
+      "url": "http://localhost:3000/sign-up-login-screen",
+      "znakovaTeksta": 319,
+      "vidiSePrazno": false,
+      "imaPozivNaPrijavu": false
+    },
+    {
+      "name": "07-gost-portal",
+      "url": "http://localhost:3000/portal",
+      "znakovaTeksta": 241,
+      "vidiSePrazno": false,
+      "imaPozivNaPrijavu": false
+    },
+    {
+      "name": "08-gost-personal-arc",
+      "url": "http://localhost:3000/personal-arc",
+      "znakovaTeksta": 360,
+      "vidiSePrazno": true,
+      "imaPozivNaPrijavu": true
+    },
+    {
+      "name": "09-gost-user-settings",
+      "url": "http://localhost:3000/sign-up-login-screen",
+      "znakovaTeksta": 319,
+      "vidiSePrazno": false,
+      "imaPozivNaPrijavu": false
+    },
+    {
+      "name": "10-gost-admin",
+      "url": "http://localhost:3000/admin-panel",
+      "znakovaTeksta": 550,
+      "vidiSePrazno": true,
+      "imaPozivNaPrijavu": false
+    },
+    {
+      "name": "11-voices",
+      "url": "http://localhost:3000/voices",
+      "voices": true,
+      "story": false,
+      "stories": false
+    },
+    {
+      "name": "12-pricing",
+      "url": "http://localhost:3000/pricing",
+      "imaCijene": true
+    },
+    {
+      "name": "13-landing-cijela",
+      "url": "http://localhost:3000/landing-page",
+      "imaCijene": true,
+      "imaPostenPocеtak": true,
+      "imaBroj1847": false
+    },
+    {
+      "name": "14-mobilna-mapa",
+      "url": "http://localhost:3000/map-of-lights"
+    },
+    {
+      "name": "15-404",
+      "url": "http://localhost:3000/ova-strana-ne-postoji",
+      "naslov": "NoMoreQuiet — The Place Where Silence Finds Its Voice"
+    }
+  ],
+  "api": {
+    "/robots.txt": 404,
+    "/sitemap.xml": 404,
+    "/api/ai/chat-completion": {
+      "status": 200,
+      "bodyStart": "{\"id\":\"OUG8aojOKNy-xN8P2uiIyAY\",\"object\":\"chat.completion\",\"created\":1790722360,\"model\":\"gemini-2.5-flash\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"ok\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"provi"
+    },
+    "/api/stats/lights": 404
+  },
+  "finishedAt": "2026-09-29T22:52:40.329Z"
+}

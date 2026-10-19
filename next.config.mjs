@@ -21,8 +21,10 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        // Koncept v2: prva strana je MAPA, ne tekst o nama.
+        // Landing ostaje dostupan na /landing-page i kasnije se spaja ISPOD mape.
         source: '/',
-        destination: '/landing-page',
+        destination: '/map-of-lights',
         permanent: false,
       },
     ];

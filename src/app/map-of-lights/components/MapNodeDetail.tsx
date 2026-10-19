@@ -39,32 +39,6 @@ export default function MapNodeDetail({ node, lights, onClose }: MapNodeDetailPr
         </button>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 border-b border-amber/8">
-        <div className="p-4 text-center border-r border-amber/8">
-          <p
-            className="font-cormorant tabular-nums text-amber"
-            style={{ fontSize: '1.6rem', fontWeight: 300 }}
-          >
-            {node.lightCount.toLocaleString()}
-          </p>
-          <p className="nmq-label mt-0.5" style={{ fontSize: '0.45rem', color: '#5a4e40' }}>
-            LIGHTS BURNING
-          </p>
-        </div>
-        <div className="p-4 text-center">
-          <p
-            className="font-cormorant tabular-nums text-gold"
-            style={{ fontSize: '1.6rem', fontWeight: 300 }}
-          >
-            {node.isCenter ? '1,000' : '—'}
-          </p>
-          <p className="nmq-label mt-0.5" style={{ fontSize: '0.45rem', color: '#5a4e40' }}>
-            FOUNDING LIGHTS
-          </p>
-        </div>
-      </div>
-
       {/* Description */}
       <div className="p-5 border-b border-amber/8">
         <p className="font-cormorant italic text-cream/75 text-sm leading-relaxed">

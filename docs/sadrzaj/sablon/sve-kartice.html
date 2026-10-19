@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NMQ · sve kartice (40)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Spectral:wght@200;300&display=swap" rel="stylesheet">
+<style>
+  :root{--void:#0a0806;--deep-earth:#110e0a;--amber:#c8822a;--gold:#D4AF37;--cream:#f0e8d8;--mist:#a89880;--silence:#5a4e40}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#000;font-family:'Cormorant Garamond',Georgia,serif;padding:24px}
+  .hint{color:var(--mist);font-family:'Spectral',serif;font-size:13px;letter-spacing:.06em;margin-bottom:20px;text-align:center}
+  .hint b{color:var(--gold)}
+  .grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+
+  .card{position:relative;width:1080px;height:1350px;overflow:hidden;flex:0 0 auto;
+    background:radial-gradient(ellipse at 50% 38%, rgba(200,130,42,.10) 0%, rgba(10,8,6,0) 62%),
+               linear-gradient(160deg,var(--void) 0%,var(--deep-earth) 55%,var(--void) 100%);
+    color:var(--cream)}
+  .card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:220px 220px}
+  .frame{position:absolute;inset:56px;border:1px solid rgba(212,175,55,.14)}
+  .inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 110px}
+  .dot{width:14px;height:14px;border-radius:50%;background:var(--gold);margin-bottom:56px;
+    box-shadow:0 0 14px rgba(212,175,55,.9),0 0 34px rgba(200,130,42,.55);animation:pulse 4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 14px rgba(212,175,55,.9),0 0 34px rgba(200,130,42,.55)}
+                   50%{opacity:.45;box-shadow:0 0 7px rgba(212,175,55,.5),0 0 16px rgba(200,130,42,.25)}}
+  .fragment{font-weight:300;font-style:italic;font-size:64px;line-height:1.32;max-width:900px}
+  .fragment::before{content:'\201C'} .fragment::after{content:'\201D'}
+  .fragment.sr{margin-top:36px;font-size:40px;color:var(--mist);opacity:.9}
+  body.only-en .fragment.sr{display:none}
+  body.only-sr .fragment:not(.sr){display:none}
+  .meta{margin-top:56px;display:flex;align-items:center;gap:20px;font-family:'Spectral',serif;font-weight:200;
+    font-size:22px;letter-spacing:.22em;text-transform:uppercase;color:var(--mist)}
+  .meta .node{color:var(--gold)} .meta .sep{width:1px;height:20px;background:var(--silence)}
+  .example{position:absolute;bottom:210px;left:0;right:0;text-align:center;font-family:'Spectral',serif;
+    font-weight:200;font-size:18px;letter-spacing:.28em;text-transform:uppercase;color:rgba(212,175,55,.55)}
+  body.no-example .example{display:none}
+  .foot{position:absolute;bottom:110px;left:0;right:0;text-align:center;font-family:'Spectral',serif;
+    font-weight:200;font-size:19px;letter-spacing:.3em;text-transform:uppercase;color:var(--silence)}
+  .tag{position:absolute;top:22px;left:26px;font-family:'Spectral',serif;font-size:16px;letter-spacing:.2em;color:rgba(212,175,55,.45)}
+  body.no-tag .tag{display:none}
+
+  .toolbar{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;gap:22px;justify-content:center;align-items:center;
+    padding:12px;background:rgba(10,8,6,.95);border-bottom:1px solid rgba(212,175,55,.2);
+    font-family:'Spectral',serif;font-size:13px;letter-spacing:.08em;color:var(--mist)}
+  .toolbar label{cursor:pointer;user-select:none}
+  body{padding-top:64px}
+
+  /* PDF: jedna kartica = jedna stranica */
+  @page{size:285.75mm 357.19mm;margin:0}
+  @media print{
+    .toolbar,.hint{display:none}
+    body{background:#000;padding:0}
+    .grid{display:block}
+    .card{break-after:page;page-break-after:always;margin:0}
+  }
+</style>
+</head>
+<body class="with-sr">
+<div class="toolbar">
+  <label><input type="radio" name="lang" value="with-sr" checked> EN + SR</label>
+  <label><input type="radio" name="lang" value="only-en"> samo EN</label>
+  <label><input type="radio" name="lang" value="only-sr"> samo SR</label>
+  <label><input type="checkbox" id="ex" checked> labela „EXAMPLE"</label>
+  <label><input type="checkbox" id="tg" checked> ID kartice</label>
+</div>
+<p class="hint">40 kartica · screenshot: DevTools → desni klik na karticu → <b>Capture node screenshot</b> · PDF: Ctrl+P (jedna kartica = jedna stranica)</p>
+<div class="grid">
+
+  <section class="card" id="FRAG-001">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I slept four hours and was still the first one awake.</p>
+      <p class="fragment sr">Spavao sam četiri sata i opet bio prvi budan.</p>
+      <div class="meta">
+        <span class="node">Rtanj</span>
+        <span class="sep"></span>
+        <span>312 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-001</div>
+  </section>
+
+  <section class="card" id="FRAG-002">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I cried in the parking lot and then said good morning.</p>
+      <p class="fragment sr">Plakao sam na parkingu, pa rekao dobro jutro.</p>
+      <div class="meta">
+        <span class="node">Sedona</span>
+        <span class="sep"></span>
+        <span>298 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-002</div>
+  </section>
+
+  <section class="card" id="FRAG-003">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">Nobody asked me anything today and I was grateful for that.</p>
+      <p class="fragment sr">Danas me niko ništa nije pitao i bio sam zahvalan na tome.</p>
+      <div class="meta">
+        <span class="node">Kailash</span>
+        <span class="sep"></span>
+        <span>287 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-003</div>
+  </section>
+
+  <section class="card" id="FRAG-004">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I check the Map of Lights every night like other people check the news.</p>
+      <p class="fragment sr">Svako veče gledam Mapu svjetala kao drugi što gledaju vijesti.</p>
+      <div class="meta">
+        <span class="node">Shasta</span>
+        <span class="sep"></span>
+        <span>276 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-004</div>
+  </section>
+
+  <section class="card" id="FRAG-005">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">The neighbour's dog knows my footsteps better than my family does.</p>
+      <p class="fragment sr">Susjedov pas poznaje moje korake bolje od moje familije.</p>
+      <div class="meta">
+        <span class="node">Glastonbury</span>
+        <span class="sep"></span>
+        <span>268 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-005</div>
+  </section>
+
+  <section class="card" id="FRAG-006">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I wanted to call my mother and watched the phone until dark.</p>
+      <p class="fragment sr">Htio sam nazvati majku i gledao telefon dok nije pao mrak.</p>
+      <div class="meta">
+        <span class="node">Machu Picchu</span>
+        <span class="sep"></span>
+        <span>259 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-006</div>
+  </section>
+
+  <section class="card" id="FRAG-007">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">At three in the morning I drank one beer and told nobody.</p>
+      <p class="fragment sr">U tri ujutro popio sam jedno pivo i nikome nisam rekao.</p>
+      <div class="meta">
+        <span class="node">Es Vedrà</span>
+        <span class="sep"></span>
+        <span>251 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-007</div>
+  </section>
+
+  <section class="card" id="FRAG-008">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">My son asked for homework help and I read the same line three times.</p>
+      <p class="fragment sr">Sin je tražio pomoć oko zadaće, a ja sam istu rečenicu čitao tri puta.</p>
+      <div class="meta">
+        <span class="node">Rtanj</span>
+        <span class="sep"></span>
+        <span>243 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-008</div>
+  </section>
+
+  <section class="card" id="FRAG-009">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I sat in the car in front of the building and then drove home.</p>
+      <p class="fragment sr">Sjedio sam u autu ispred zgrade i onda otišao kući.</p>
+      <div class="meta">
+        <span class="node">Sedona</span>
+        <span class="sep"></span>
+        <span>231 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-009</div>
+  </section>
+
+  <section class="card" id="FRAG-010">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I cooked for one and set the table for one and that felt honest.</p>
+      <p class="fragment sr">Kuhao sam za jednog i postavio sto za jednog i to je bilo iskreno.</p>
+      <div class="meta">
+        <span class="node">Kailash</span>
+        <span class="sep"></span>
+        <span>224 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-010</div>
+  </section>
+
+  <section class="card" id="FRAG-011">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">Today I was silent for a whole hour and it was not punishment.</p>
+      <p class="fragment sr">Danas sam bio tih cijeli sat i to nije bila kazna.</p>
+      <div class="meta">
+        <span class="node">Shasta</span>
+        <span class="sep"></span>
+        <span>216 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-011</div>
+  </section>
+
+  <section class="card" id="FRAG-012">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I said I was fine at work and I meant it a little.</p>
+      <p class="fragment sr">Rekao sam na poslu da sam dobro i malo sam i mislio ozbiljno.</p>
+      <div class="meta">
+        <span class="node">Glastonbury</span>
+        <span class="sep"></span>
+        <span>208 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-012</div>
+  </section>
+
+  <section class="card" id="FRAG-013">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I was so angry I counted to ten twice in the hallway.</p>
+      <p class="fragment sr">Bio sam toliko bijesan da sam dva puta brojao do deset u hodniku.</p>
+      <div class="meta">
+        <span class="node">Machu Picchu</span>
+        <span class="sep"></span>
+        <span>199 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-013</div>
+  </section>
+
+  <section class="card" id="FRAG-014">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">My brother laughed out loud and I felt something loosen in my chest.</p>
+      <p class="fragment sr">Brat se glasno nasmijao i osjetio sam da mi se nešto popustilo u grudima.</p>
+      <div class="meta">
+        <span class="node">Es Vedrà</span>
+        <span class="sep"></span>
+        <span>191 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-014</div>
+  </section>
+
+  <section class="card" id="FRAG-015">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I wanted to break something so I washed every dish in the apartment.</p>
+      <p class="fragment sr">Htio sam nešto razbiti pa sam oprao svako jelo u stanu.</p>
+      <div class="meta">
+        <span class="node">Rtanj</span>
+        <span class="sep"></span>
+        <span>183 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-015</div>
+  </section>
+
+  <section class="card" id="FRAG-016">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">The doctor said it was nothing and I cried in the stairwell anyway.</p>
+      <p class="fragment sr">Doktor je rekao da nije ništa i svejedno sam plakao na stepeništu.</p>
+      <div class="meta">
+        <span class="node">Sedona</span>
+        <span class="sep"></span>
+        <span>176 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-016</div>
+  </section>
+
+  <section class="card" id="FRAG-017">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I had not spoken out loud since Friday and I did not miss it.</p>
+      <p class="fragment sr">Nisam progovorio naglas od petka i nije mi nedostajalo.</p>
+      <div class="meta">
+        <span class="node">Kailash</span>
+        <span class="sep"></span>
+        <span>168 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-017</div>
+  </section>
+
+  <section class="card" id="FRAG-018">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">My sister called twice and I let it ring in my hand.</p>
+      <p class="fragment sr">Sestra je zvala dva puta i pustio sam da zvoni u mojoj ruci.</p>
+      <div class="meta">
+        <span class="node">Shasta</span>
+        <span class="sep"></span>
+        <span>157 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-018</div>
+  </section>
+
+  <section class="card" id="FRAG-019">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I looked at my hands on the bus and felt ashamed of nothing.</p>
+      <p class="fragment sr">Gledao sam svoje ruke u autobusu i stidio se ničega.</p>
+      <div class="meta">
+        <span class="node">Glastonbury</span>
+        <span class="sep"></span>
+        <span>149 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-019</div>
+  </section>
+
+  <section class="card" id="FRAG-020">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I swallowed my coffee dry because I could not say one more sentence.</p>
+      <p class="fragment sr">Progutao sam kafu na suho jer nisam mogao reći još jednu rečenicu.</p>
+      <div class="meta">
+        <span class="node">Machu Picchu</span>
+        <span class="sep"></span>
+        <span>141 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-020</div>
+  </section>
+
+  <section class="card" id="FRAG-021">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I stopped explaining myself to my partner somewhere in March.</p>
+      <p class="fragment sr">Prestao sam se objašnjavati partneru negdje u martu.</p>
+      <div class="meta">
+        <span class="node">Es Vedrà</span>
+        <span class="sep"></span>
+        <span>133 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-021</div>
+  </section>
+
+  <section class="card" id="FRAG-022">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">The apartment is loud with the sound of my own steps.</p>
+      <p class="fragment sr">Stan je glasan od zvuka mojih vlastitih koraka.</p>
+      <div class="meta">
+        <span class="node">Rtanj</span>
+        <span class="sep"></span>
+        <span>124 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-022</div>
+  </section>
+
+  <section class="card" id="FRAG-023">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I practise a calm face in the elevator mirror every single morning.</p>
+      <p class="fragment sr">Vježbam mirno lice u ogledalu lifta svako jutro.</p>
+      <div class="meta">
+        <span class="node">Sedona</span>
+        <span class="sep"></span>
+        <span>116 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-023</div>
+  </section>
+
+  <section class="card" id="FRAG-024">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I cried on the tram and a woman looked away and I was grateful.</p>
+      <p class="fragment sr">Plakao sam u tramvaju, žena je okrenula pogled i bio sam zahvalan.</p>
+      <div class="meta">
+        <span class="node">Kailash</span>
+        <span class="sep"></span>
+        <span>108 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-024</div>
+  </section>
+
+  <section class="card" id="FRAG-025">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I sat with my father in that room and we said almost nothing.</p>
+      <p class="fragment sr">Sjedio sam s ocem u toj sobi i skoro ništa nismo rekli.</p>
+      <div class="meta">
+        <span class="node">Shasta</span>
+        <span class="sep"></span>
+        <span>97 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-025</div>
+  </section>
+
+  <section class="card" id="FRAG-026">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I remember the pattern on her blanket better than the last conversation.</p>
+      <p class="fragment sr">Pamtim šaru na njenom ćebetu bolje od zadnjeg razgovora.</p>
+      <div class="meta">
+        <span class="node">Glastonbury</span>
+        <span class="sep"></span>
+        <span>89 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-026</div>
+  </section>
+
+  <section class="card" id="FRAG-027">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I write things down the way my father wrote in his small notebook.</p>
+      <p class="fragment sr">Zapisujem stvari onako kako je otac zapisivao u malu bilježnicu.</p>
+      <div class="meta">
+        <span class="node">Machu Picchu</span>
+        <span class="sep"></span>
+        <span>81 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-027</div>
+  </section>
+
+  <section class="card" id="FRAG-028">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I am afraid I will forget how my voice sounds when honest.</p>
+      <p class="fragment sr">Bojim se da ću zaboraviti kako zvuči moj glas kad je iskren.</p>
+      <div class="meta">
+        <span class="node">Es Vedrà</span>
+        <span class="sep"></span>
+        <span>72 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-028</div>
+  </section>
+
+  <section class="card" id="FRAG-029">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">Today I got dressed instead of staying in bed and that was enough.</p>
+      <p class="fragment sr">Danas sam se obukao umjesto da ostanem u krevetu i to je bilo dovoljno.</p>
+      <div class="meta">
+        <span class="node">Rtanj</span>
+        <span class="sep"></span>
+        <span>64 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-029</div>
+  </section>
+
+  <section class="card" id="FRAG-030">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I threw away the bottle I kept for a bad night.</p>
+      <p class="fragment sr">Bacio sam flašu koju sam čuvao za lošu noć.</p>
+      <div class="meta">
+        <span class="node">Sedona</span>
+        <span class="sep"></span>
+        <span>56 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-030</div>
+  </section>
+
+  <section class="card" id="FRAG-031">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I left the apartment before noon for no reason at all.</p>
+      <p class="fragment sr">Izašao sam iz stana prije podneva bez ikakvog razloga.</p>
+      <div class="meta">
+        <span class="node">Kailash</span>
+        <span class="sep"></span>
+        <span>48 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-031</div>
+  </section>
+
+  <section class="card" id="FRAG-032">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">The cashier asked about the weather and I answered with a full sentence.</p>
+      <p class="fragment sr">Kasirka je pitala o vremenu i odgovorio sam punom rečenicom.</p>
+      <div class="meta">
+        <span class="node">Shasta</span>
+        <span class="sep"></span>
+        <span>41 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-032</div>
+  </section>
+
+  <section class="card" id="FRAG-033">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I bought one watermelon and carried it home like it mattered.</p>
+      <p class="fragment sr">Kupio sam jednu lubenicu i nosio je kući kao da je važna.</p>
+      <div class="meta">
+        <span class="node">Glastonbury</span>
+        <span class="sep"></span>
+        <span>35 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-033</div>
+  </section>
+
+  <section class="card" id="FRAG-034">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I called my friend back after two weeks of not answering.</p>
+      <p class="fragment sr">Nazvao sam prijatelja poslije dvije nedjelje neodgovaranja.</p>
+      <div class="meta">
+        <span class="node">Machu Picchu</span>
+        <span class="sep"></span>
+        <span>28 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-034</div>
+  </section>
+
+  <section class="card" id="FRAG-035">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I opened the letter from the bank and read it once, sitting down.</p>
+      <p class="fragment sr">Otvorio sam pismo iz banke i pročitao ga jednom, sjedeći.</p>
+      <div class="meta">
+        <span class="node">Es Vedrà</span>
+        <span class="sep"></span>
+        <span>21 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-035</div>
+  </section>
+
+  <section class="card" id="FRAG-036">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I walked my daughter to school and did not check my phone once.</p>
+      <p class="fragment sr">Otpratio sam kćerku do škole i nijednom nisam pogledao telefon.</p>
+      <div class="meta">
+        <span class="node">Rtanj</span>
+        <span class="sep"></span>
+        <span>17 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-036</div>
+  </section>
+
+  <section class="card" id="FRAG-037">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I said no to my boss, my hands were shaking, it stayed no.</p>
+      <p class="fragment sr">Rekao sam ne šefu, ruke su se tresle, ostalo je ne.</p>
+      <div class="meta">
+        <span class="node">Sedona</span>
+        <span class="sep"></span>
+        <span>12 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-037</div>
+  </section>
+
+  <section class="card" id="FRAG-038">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I am tired and it is not the kind that sleep fixes.</p>
+      <p class="fragment sr">Umoran sam i to nije onaj umor koji spavanje popravlja.</p>
+      <div class="meta">
+        <span class="node">Kailash</span>
+        <span class="sep"></span>
+        <span>9 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-038</div>
+  </section>
+
+  <section class="card" id="FRAG-039">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I sat on the floor of my room and did not want to disappear.</p>
+      <p class="fragment sr">Sjedio sam na podu svoje sobe i nisam htio da nestanem.</p>
+      <div class="meta">
+        <span class="node">Shasta</span>
+        <span class="sep"></span>
+        <span>5 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-039</div>
+  </section>
+
+  <section class="card" id="FRAG-040">
+    <div class="frame"></div>
+    <div class="inner">
+      <div class="dot"></div>
+      <p class="fragment">I wrote one sentence tonight and left it here for someone.</p>
+      <p class="fragment sr">Napisao sam jednu rečenicu večeras i ostavio je ovdje za nekoga.</p>
+      <div class="meta">
+        <span class="node">Glastonbury</span>
+        <span class="sep"></span>
+        <span>2 DAYS AGO</span>
+      </div>
+    </div>
+    <div class="example">EXAMPLE · YOURS COULD BE HERE</div>
+    <div class="foot">nomorequiet.com</div>
+    <div class="tag">FRAG-040</div>
+  </section>
+</div>
+<script>
+  const b = document.body;
+  document.querySelectorAll('input[name=lang]').forEach(r =>
+    r.addEventListener('change', () => { b.classList.remove('with-sr','only-en','only-sr'); b.classList.add(r.value); }));
+  document.getElementById('ex').addEventListener('change', e => b.classList.toggle('no-example', !e.target.checked));
+  document.getElementById('tg').addEventListener('change', e => b.classList.toggle('no-tag', !e.target.checked));
+</script>
+</body>
+</html>

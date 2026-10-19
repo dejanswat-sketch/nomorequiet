@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NMQ · Fragment Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Spectral:wght@200;300&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     NoMoreQuiet — šablon kartice-fragmenta
+     Boje i fontovi su identični aplikaciji (tailwind.config.js)
+     Zadnja izmjena: 22.05.2026
+     ============================================================ */
+  :root{
+    --void:#0a0806;
+    --deep-earth:#110e0a;
+    --amber:#c8822a;
+    --gold:#D4AF37;
+    --amber-glow:#e8a04a;
+    --cream:#f0e8d8;
+    --mist:#a89880;
+    --silence:#5a4e40;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    gap:32px;
+    padding:32px;
+    font-family:'Cormorant Garamond',Georgia,serif;
+  }
+
+  /* ---- formati ---- */
+  .card{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 50% 38%, rgba(200,130,42,.10) 0%, rgba(10,8,6,0) 62%),
+      linear-gradient(160deg, var(--void) 0%, var(--deep-earth) 55%, var(--void) 100%);
+    color:var(--cream);
+    flex:0 0 auto;
+  }
+  .card.feed  { width:1080px; height:1350px; }
+  .card.story { width:1080px; height:1920px; }
+  .card.pin   { width:1000px; height:1500px; }
+
+  /* ---- zrno (grain) preko cijele kartice ---- */
+  .card::after{
+    content:'';
+    position:absolute; inset:0;
+    pointer-events:none;
+    opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:220px 220px;
+  }
+
+  /* ---- unutrašnji okvir ---- */
+  .frame{
+    position:absolute; inset:56px;
+    border:1px solid rgba(212,175,55,.14);
+    pointer-events:none;
+  }
+
+  /* ---- sadržaj ---- */
+  .inner{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 120px;
+  }
+
+  .dot{
+    width:14px;height:14px;border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 14px rgba(212,175,55,.9), 0 0 34px rgba(200,130,42,.55);
+    animation:pulseAmber 4s ease-in-out infinite;
+    margin-bottom:64px;
+  }
+  @keyframes pulseAmber{
+    0%,100%{opacity:1;  box-shadow:0 0 14px rgba(212,175,55,.9), 0 0 34px rgba(200,130,42,.55)}
+    50%    {opacity:.45;box-shadow:0 0 7px  rgba(212,175,55,.5), 0 0 16px rgba(200,130,42,.25)}
+  }
+
+  .fragment{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:66px;
+    line-height:1.32;
+    letter-spacing:.005em;
+    color:var(--cream);
+    max-width:900px;
+  }
+  .fragment::before{content:'\201C'}
+  .fragment::after {content:'\201D'}
+
+  .meta{
+    margin-top:64px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-family:'Spectral',serif;
+    font-weight:200;
+    font-size:22px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--mist);
+  }
+  .meta .sep{width:1px;height:20px;background:var(--silence)}
+  .meta .node{color:var(--gold)}
+
+  .foot{
+    position:absolute;
+    bottom:96px;left:0;right:0;
+    text-align:center;
+    font-family:'Spectral',serif;
+    font-weight:200;
+    font-size:19px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--silence);
+  }
+
+  /* labela istinitosti (varijanta A) — uključi sa ?ex=1 ili preko kvadratića */
+  .example{
+    position:absolute;
+    bottom:190px;left:0;right:0;
+    text-align:center;
+    font-family:'Spectral',serif;
+    font-weight:200;
+    font-size:18px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:rgba(212,175,55,.55);
+    display:none;
+  }
+  body.with-example .example{display:block}
+
+  /* ---- alatna traka (ne ulazi u screenshot) ---- */
+  .toolbar{
+    position:fixed;top:0;left:0;right:0;
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    padding:14px 18px;
+    background:rgba(10,8,6,.94);
+    border-bottom:1px solid rgba(212,175,55,.2);
+    font-family:'Spectral',serif;font-size:13px;letter-spacing:.08em;
+    color:var(--mist);z-index:99;
+  }
+  .toolbar input,.toolbar select{
+    background:#141109;color:var(--cream);
+    border:1px solid rgba(212,175,55,.25);
+    padding:7px 10px;font-family:inherit;font-size:13px;min-width:220px;
+  }
+  .toolbar button{
+    background:linear-gradient(135deg,#c8822a,#D4AF37);
+    color:#0a0806;border:0;padding:8px 14px;cursor:pointer;
+    font-family:inherit;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  }
+  .toolbar .hint{opacity:.6;font-size:11px;letter-spacing:.05em}
+  body{padding-top:88px}
+  /* clean=1 → sakrij alatnu traku (za screenshot/štampu) */
+  body.clean{padding-top:0}
+  body.clean .toolbar{display:none}
+  @media print{ .toolbar{display:none} body{padding:0;background:#fff} }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     ALATNA TRAKA — služi samo za brzu izmjenu teksta.
+     U screenshot NE ulazi (sakrij je ili koristi DevTools "Capture node screenshot").
+     Brzi način: otvori fajl sa parametrima, npr.
+     kartica.html?f=I%20stopped%20explaining%20myself.&n=Rtanj&a=312%20days%20ago&s=feed
+     ============================================================ -->
+<div class="toolbar">
+  <span>NMQ KARTICA</span>
+  <input id="inF" placeholder="fragment (EN)">
+  <input id="inN" placeholder="node (npr. Rtanj)" style="min-width:140px">
+  <input id="inA" placeholder="age (npr. 312 days ago)" style="min-width:160px">
+  <select id="inS">
+    <option value="feed">feed 1080×1350</option>
+    <option value="story">story 1080×1920</option>
+    <option value="pin">pin 1000×1500</option>
+  </select>
+  <button id="apply">Primijeni</button>
+  <label style="display:flex;gap:6px;align-items:center;letter-spacing:.08em">
+    <input type="checkbox" id="exChk" style="min-width:auto"> labela EXAMPLE (varijanta A)
+  </label>
+  <span class="hint">Screenshot: DevTools → desni klik na karticu → „Capture node screenshot"</span>
+</div>
+
+<div class="card feed" id="card">
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="dot"></div>
+    <p class="fragment" id="frag">I stopped explaining myself to people who weren&#39;t listening.</p>
+    <div class="meta">
+      <span class="node" id="node">Rtanj</span>
+      <span class="sep"></span>
+      <span id="age">312 days ago</span>
+    </div>
+  </div>
+  <div class="example">Example · yours could be here</div>
+  <div class="foot">nomorequiet.com</div>
+</div>
+
+<script>
+  // Placeholderi — mijenjaj ručno ili preko URL parametara (?f= &n= &a= &s= &ex=1 &clean=1)
+  const q = new URLSearchParams(location.search);
+  if (q.get('clean')) document.body.classList.add('clean'); // clean=1 → bez alatne trake (za screenshot)
+  if (q.get('ex')) document.body.classList.add('with-example'); // ex=1 → labela istinitosti (varijanta A)
+  const card = document.getElementById('card');
+  const frag = document.getElementById('frag');
+  const node = document.getElementById('node');
+  const age  = document.getElementById('age');
+  const inF = document.getElementById('inF');
+  const inN = document.getElementById('inN');
+  const inA = document.getElementById('inA');
+  const inS = document.getElementById('inS');
+
+  function render(){
+    frag.textContent = inF.value || frag.textContent;
+    node.textContent = inN.value || node.textContent;
+    age.textContent  = inA.value || age.textContent;
+    card.className = 'card ' + inS.value;
+    // automatska veličina teksta: duži fragment = manji font
+    const len = frag.textContent.length;
+    frag.style.fontSize = len > 150 ? '50px' : len > 100 ? '56px' : '66px';
+  }
+
+  if (q.get('f')) inF.value = q.get('f');
+  if (q.get('n')) inN.value = q.get('n');
+  if (q.get('a')) inA.value = q.get('a');
+  if (q.get('s')) inS.value = q.get('s');
+  render();
+
+  document.getElementById('apply').addEventListener('click', render);
+  [inF,inN,inA].forEach(el => el.addEventListener('input', render));
+  inS.addEventListener('change', render);
+  const exChk = document.getElementById('exChk');
+  exChk.checked = document.body.classList.contains('with-example');
+  exChk.addEventListener('change', () => document.body.classList.toggle('with-example', exChk.checked));
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+DEPLOYMENT
+Hostinger + Hetzner
+Domen kupljen
+/
+Sajt na Hostingeru
+/
+Mašina na Hetzneru (Hertz)
+/
+Glass Brain v2.0
+CTO CHECKLIST ZA AGENTA
+Target: braincore.pro • api.braincore.pro • live.braincore.pro
+GENESIS BRAIN v2.0 // HERO PREVIEW
+BRAINCORE • DECENTRALIZED
+BRAINCORE PRO
+Decentralized AI Swarm Architecture — No Central Orchestrator
+HERO: assets/brain-glass.png + script.js 360°
+LIVE CHECKS • DOMEN
+TYPE
+A
+HOST
+@ / www / api / live
+TTL
+14400
+DNS TABLE • hPanel
+Host
+Points to
+@
+Hostinger IP • 194.164.149.x
+www
+Hostinger IP
+api
+Hetzner • 95.216.x.x
+live
+Hetzner • 95.216.x.x
+SSL: Let's Encrypt auto u Hostingeru + certbot na Hetzneru (sudo certbot --nginx -d api, live)
+H
+SAJT • HOSTINGER
+Static HTML • Tailwind • 100/100 Lighthouse
+LEFT
+TECH STACK
+SECTIONS SPEC
+01
+Šta je mozak
+02
+Kako radi
+03
+Cene
+04
+Live Demo
+FILE TREE
+/public_html
+// script.js 360 spin
+DEPLOY CHECKLIST
+Z
+MAŠINA • HETZNER (HERTZ)
+3x CX11 / CPX31 Docker • Ubuntu 22.04
+RIGHT
+ARCHITECTURE
+● SUPPORT
+● RESEARCH
+● EXECUTION
+◉ SHARED ENV
+ZERO NPM • CORE
+FILE TREE • /opt/braincore
+gossip.js — bez npm (snippet)
+resp-client.js — bez npm (snippet)
+API • api.braincore.pro + live
+POST /task
+ubaci task u queue
+GET /status
+swarm health + 3 node-a
+POST /fitness
+fitness score → uči kod nas
+WS live.braincore.pro
+gossip + pheromone vizuelizacija
+HETZNER CHECKLIST
+SEKCIJA 4 • KAKO SE SPAJA SAJT + MAŠINA
+FETCH • JSON • WS
+HOSTINGER • braincore.pro
+Stripe → API key izdaje se posle $999
+→
+HETZNER • api.braincore.pro
+/task /status /fitness REST
+→
+GENOME REGISTRY
+samo fitness, ne ceo task
+01
+Sajt zove api preko fetch-a, CORS omogućen na Hetzner nginx-u
+02
+Edge šalje samo fitness score nazad → uči kod nas (Genome Registry)
+03
+Billing: Stripe na Hostingeru, webhook izdaje API key za mašinu
+KORAK PO KORAK • 1-10
+EST: 3-4h • 0 npm • ultra brz
+READY ZA AGENTA • KOPIRAJ I KRENI
+Hostinger IP: 194.164.149.__ • Hetzner IP: 95.216.__.__ • Ubuntu 22.04 • Redis 7 • pm2 • nginx
+BRAINCORE.PRO • DECENTRALIZED AI SWARM • NO CENTRAL ORCHESTRATOR • GLASS BRAIN v2.0
+Hostinger = sajt • Hetzner = mašina • api + live subdomeni → Hertz IP

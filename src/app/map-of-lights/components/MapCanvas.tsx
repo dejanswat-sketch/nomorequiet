@@ -389,9 +389,6 @@ export default function MapCanvas({
                   {node.label}
                 </p>
                 <p className="font-cormorant font-light text-cream text-sm">{node.name}</p>
-                <p className="nmq-label mt-0.5" style={{ fontSize: '0.4rem', color: '#5a4e40' }}>
-                  {node.lightCount.toLocaleString()} lights
-                </p>
               </div>
             )}
           </div>

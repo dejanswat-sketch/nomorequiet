@@ -1,0 +1,76 @@
+{
+  "console": [],
+  "exceptions": [],
+  "http": [],
+  "failed": [
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "ED26D5740437A04D447D5F49936BCB09"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "50600BC5F6D71D1C89081F4C652B8E59"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "25688.53"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "25688.54"
+    },
+    {
+      "error": "net::ERR_ABORTED",
+      "url": "25688.58"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "59CD750FC918C59808B0D30CBFB57B9A"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "80B015499735D924A5E756C1DC2C3DEE"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "25688.62"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "25688.63"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "4F3F75C953B38829FDA4FF1F5410321B"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "547582287E7A248522DE8289C6738701"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "25688.66"
+    },
+    {
+      "error": "net::ERR_NAME_NOT_RESOLVED",
+      "url": "25688.65"
+    },
+    {
+      "error": "net::ERR_ABORTED",
+      "url": "25688.67"
+    }
+  ],
+  "nalazi": {
+    "detalj-cvora": {
+      "klik": {
+        "ok": true,
+        "tekst": "Rtanj THE HOUSE Fire, earth, stone, silence. 43°46′N · 21°50′E"
+      },
+      "imaPanel": true,
+      "imaCijenu1e": true,
+      "imaCtaLight": true,
+      "imaBrojeve": true,
+      "isjecak": "NOMOREQUIET RTANJ · 43°46′N THE VAULT THE MOUNTAIN STAY IN THE HOUSE SIGN IN BEGIN WRITING THE GLOBAL NEXUS Map of Lights Seven nodes. One House. FILTER BY NODE ALL RTANJ SEDONA MOUNT MOUNT GLASTONBURY MACHU ES Rtanj THE HOUSE Fire, earth, stone, silence. 43°46′N · 21°50′E Sedona THE VORTEX Sand, wind, spiral. 34°52′N · 111°47′W Mount Kailash THE CROWN Ice, altitude, breath, void. 31°04′N · 81°18′"
+    }
+  }
+}

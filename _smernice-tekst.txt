@@ -1,0 +1,73 @@
+CONFIDENTIAL
+— ŠTA I KAKO GRADIMO
+Poster je vizija za prodaju
+Ovo je istina o gradnji
+BUILD TARGET
+Node.js builtins only: net, dgram, fs, crypto. Sopstveni gossip + RESP parser.
+AGENT_ID: GENESIS-CTO-002
+MODE: IMPLEMENTATION
+STACK: VANILLA NODE
+STATUS: BUILDING
+01 // ISTINA O POSTERU
+ŠTA JE STVARNO IZGRAĐENO
+// real_state.js
+ŠTA JE PLANIRANO
+// target: 3 nodes <2s discovery
+ŠTA NAMERNO NE RADIMO
+⛔ FORBIDDEN:
+02 // ŠTA GRADIMO SAD - CROSS-NODE SWARM
+3 Node.js procesa na portovima 8001, 8002, 8003. Nijedan nije master. Gossip im govori ko je živ. Task ubačen u Node A mora završiti u Node B ako je B slobodniji.
+GOSSIP FLOW - Node A ↔ Node B
+Node A :8001
+-- UDP ping (dgram) -->
+Node B :8002
+-- ack + task list -->
+Interval: 300ms, fanout: 2, failure timeout: 1200ms
+CODE SCAFFOLD // BEZ NPM
+node src/index.js --port=8001
+node --check gossip.js
+03 // ARHITEKTURA IZ SLIKE - KAKO MAPIRA
+↓ gossip + RESP
+SHARED ENVIRONMENT u sredini
+4 LAYERA DOLE - BUILD REDOSLED
+MAPIRANJE - POSTER → KOD
+FOLDER STRUKTURA KOJU AGENT MORA NAPRAVITI
+✓ Ako agent napravi folder shared/ → dobar znak
+✕ Ako vidis node_modules → FAIL, briši
+04 // TEHNIČKI ZAHTEVI - BEZ NPM
+⛔ ZABRANJENO
+npm install bilo čega
+require('ioredis'), libp2p, bullmq
+express, axios, lodash
+external Docker za test
+✅ DOZVOLJENO
+Node.js built-in: net, dgram, fs, crypto, events
+Ručni RESP parser (200 linija max)
+Ručni gossip (SWIM simplifikovan)
+JSON + Buffer only
+PAŽNJA AGENTE:
+IMPLEMENTACIJA - REDOSLED
+CHECKLIST PRE NEGO ŠTO KAŽEŠ GOTOVO
+05 // KAKO UČI KOD NAS I KAKO IZNAJMLJUJEMO
+PRIVACY MODEL
+Edge node (klijentov server) pokreće swarm lokalno. Nikad ne šalje sadržaj taskova, ticket-a, koda. Šalje samo:
+→ Centralni Genome Registry bira top 10% genome-a i distribuira nazad kao update.
+GENOME REGISTRY
+Prima scores, radi tournament selection, vraća najbolji wasm/code blob.
+Metered po agent-hour. Stripe. $0.12 / agent-hour. US cene $999/mo za strani market, sve na engleskom.
+ZA STRANO TRŽIŠTE:
+Stripe metered
+KRITERIJUMI USPEHA ZA AGENTA
+FINAL CHECK // mora sve zeleno da bi merge
+node src/index.js --port=8001 --peers=127.0.0.1:8002,127.0.0.1:8003
+Očekivano: SYNCED in 1.2s, 3 peers alive
+GENESIS BRAIN v2.0 // PUNE SMERNICE - INTERNAL
+Bez print dugmeta // CTO spec // Nije za prodaju - za gradnju
+POSTER JE VIZIJA ZA PRODAJU // OVO JE ISTINA O GRADNJI // GRADIMO BEZ NPM ZAVISNOSTI
+PUNE SMERNICE
+Cross-node swarm
+Više node-ova koji se
+blackboard.set('task:42', 
+Edge uči lokalno.
+Agent je uspeo ako
+Pokreni: 

@@ -25,6 +25,14 @@ function formatDate(dateStr: string): string {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 }
 
+/** Broj dana od prvog unosa. Bez unosa → 0 (nikad izmišljen broj). */
+function daysSinceFirstEntry(entries: JournalEntryData[]): number {
+  if (!entries.length) return 0;
+  const first = entries.reduce((min, e) => (e.date < min ? e.date : min), entries[0].date);
+  const diff = Date.now() - new Date(first).getTime();
+  return Math.max(1, Math.ceil(diff / 86_400_000));
+}
+
 export default function JournalSidebar({
   entries,
   selectedEntry,
@@ -104,12 +112,18 @@ export default function JournalSidebar({
         </div>
       </div>
 
-      {/* Stats row */}
+      {/* Stats row — samo stvarni brojevi (Koncept v2: Kuća ne mjeri izmišljeno) */}
       <div className="grid grid-cols-3 border-b border-amber/8">
         {[
           { id: 'stat-entries', label: 'ENTRIES', value: entries.length },
-          { id: 'stat-days', label: 'DAYS', value: 26 },
-          { id: 'stat-depth', label: 'AVG DEPTH', value: (entries.reduce((s, e) => s + e.depthScore, 0) / entries.length).toFixed(1) },
+          { id: 'stat-days', label: 'DAYS', value: daysSinceFirstEntry(entries) },
+          {
+            id: 'stat-depth',
+            label: 'AVG DEPTH',
+            value: entries.length
+              ? (entries.reduce((s, e) => s + e.depthScore, 0) / entries.length).toFixed(1)
+              : '—',
+          },
         ].map((stat) => (
           <div key={stat.id} className="p-3 text-center">
             <p className="font-cormorant font-light tabular-nums text-amber" style={{ fontSize: '1.1rem' }}>

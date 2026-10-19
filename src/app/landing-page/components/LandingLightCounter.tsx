@@ -2,31 +2,21 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
+// Koncept v2, pravilo 2: „Kuća ne mjeri" — nijedan broj se ne prikazuje.
+// Čvorovi su pejzaž (ime, labela, koordinate), ne rang-lista.
 const nodeStats = [
-  { id: 'node-rtanj', name: 'Rtanj', label: 'THE HOUSE', count: 847, coords: '43°46′N · 21°50′E', color: '#D4AF37' },
-  { id: 'node-sedona', name: 'Sedona', label: 'THE VORTEX', count: 213, coords: '34°52′N · 111°47′W', color: '#c8822a' },
-  { id: 'node-kailash', name: 'Kailash', label: 'THE CROWN', count: 156, coords: '31°04′N · 81°18′E', color: '#a89880' },
-  { id: 'node-shasta', name: 'Shasta', label: 'THE SOURCE', count: 189, coords: '41°24′N · 122°11′W', color: '#a89880' },
-  { id: 'node-glastonbury', name: 'Glastonbury', label: 'THE TOR', count: 174, coords: '51°08′N · 2°42′W', color: '#a89880' },
-  { id: 'node-machu', name: 'Machu Picchu', label: 'THE CROSSING', count: 142, coords: '13°09′S · 72°32′W', color: '#a89880' },
-  { id: 'node-esvedra', name: 'Es Vedrà', label: 'THE MAGNET', count: 126, coords: '38°52′N · 1°12′E', color: '#a89880' },
+  { id: 'node-rtanj', name: 'Rtanj', label: 'THE HOUSE', coords: '43°46′N · 21°50′E', color: '#D4AF37' },
+  { id: 'node-sedona', name: 'Sedona', label: 'THE VORTEX', coords: '34°52′N · 111°47′W', color: '#c8822a' },
+  { id: 'node-kailash', name: 'Kailash', label: 'THE CROWN', coords: '31°04′N · 81°18′E', color: '#a89880' },
+  { id: 'node-shasta', name: 'Shasta', label: 'THE SOURCE', coords: '41°24′N · 122°11′W', color: '#a89880' },
+  { id: 'node-glastonbury', name: 'Glastonbury', label: 'THE TOR', coords: '51°08′N · 2°42′W', color: '#a89880' },
+  { id: 'node-machu', name: 'Machu Picchu', label: 'THE CROSSING', coords: '13°09′S · 72°32′W', color: '#a89880' },
+  { id: 'node-esvedra', name: 'Es Vedrà', label: 'THE MAGNET', coords: '38°52′N · 1°12′E', color: '#a89880' },
 ];
 
 export default function LandingLightCounter() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [totalLights, setTotalLights] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch('/api/stats/lights')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data: { total?: number } | null) => {
-        if (data && typeof data.total === 'number' && data.total >= 0) {
-          setTotalLights(data.total);
-        }
-      })
-      .catch(() => setTotalLights(null));
-  }, []);
 
   useEffect(() => {
     const el = ref?.current;
@@ -82,13 +72,7 @@ export default function LandingLightCounter() {
               <p className="nmq-label mb-1" style={{ fontSize: '0.5rem', color: node?.color }}>
                 {node?.label}
               </p>
-              <p
-                className="font-cormorant font-light tabular-nums mb-1"
-                style={{ fontSize: '1.75rem', color: node?.color, lineHeight: 1.1 }}
-              >
-                {node?.count?.toLocaleString()}
-              </p>
-              <p className="font-cormorant font-light text-mist text-sm">{node?.name}</p>
+              <p className="font-cormorant font-light text-mist text-lg mb-1">{node?.name}</p>
               <p className="nmq-label mt-1" style={{ fontSize: '0.45rem', color: '#5a4e40' }}>
                 {node?.coords}
               </p>
@@ -103,11 +87,7 @@ export default function LandingLightCounter() {
           }`}
         >
           <p className="nmq-body text-mist text-base">
-            <span className="text-gold font-cormorant font-light text-2xl tabular-nums">
-              {totalLights === null ? '—' : totalLights.toLocaleString()}
-            </span>
-            {' '}lights burning across the pyramid · {' '}
-            <span className="text-amber">1,000</span> founding lights sealed
+            Seven nodes, one House. The map fills slowly — a light is a sentence, not a score.
           </p>
         </div>
       </div>

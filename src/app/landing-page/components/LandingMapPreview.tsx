@@ -3,14 +3,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
+// Koncept v2: bez izmišljenih brojeva svjetala — mapa pokazuje čvorove, ne statistiku.
 const nodes = [
-  { id: 'prev-rtanj', name: 'Rtanj', label: 'THE HOUSE', x: 53.5, y: 36, count: 847, founding: true },
-  { id: 'prev-sedona', name: 'Sedona', label: 'THE VORTEX', x: 14, y: 40, count: 213, founding: false },
-  { id: 'prev-kailash', name: 'Kailash', label: 'THE CROWN', x: 70, y: 38, count: 156, founding: false },
-  { id: 'prev-shasta', name: 'Shasta', label: 'THE SOURCE', x: 10, y: 32, count: 189, founding: false },
-  { id: 'prev-glastonbury', name: 'Glastonbury', label: 'THE TOR', x: 46, y: 24, count: 174, founding: false },
-  { id: 'prev-machu', name: 'Machu Picchu', label: 'THE CROSSING', x: 22, y: 62, count: 142, founding: false },
-  { id: 'prev-esvedra', name: 'Es Vedrà', label: 'THE MAGNET', x: 49, y: 40, count: 126, founding: false },
+  { id: 'prev-rtanj', name: 'Rtanj', label: 'THE HOUSE', x: 53.5, y: 36, founding: true },
+  { id: 'prev-sedona', name: 'Sedona', label: 'THE VORTEX', x: 14, y: 40, founding: false },
+  { id: 'prev-kailash', name: 'Kailash', label: 'THE CROWN', x: 70, y: 38, founding: false },
+  { id: 'prev-shasta', name: 'Shasta', label: 'THE SOURCE', x: 10, y: 32, founding: false },
+  { id: 'prev-glastonbury', name: 'Glastonbury', label: 'THE TOR', x: 46, y: 24, founding: false },
+  { id: 'prev-machu', name: 'Machu Picchu', label: 'THE CROSSING', x: 22, y: 62, founding: false },
+  { id: 'prev-esvedra', name: 'Es Vedrà', label: 'THE MAGNET', x: 49, y: 40, founding: false },
 ];
 
 export default function LandingMapPreview() {
@@ -57,7 +58,7 @@ export default function LandingMapPreview() {
           className={`relative nmq-card overflow-hidden transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
-          style={{ height: 'min(420px, 55vh)', minHeight: '260px', background: '#0d0b08' }}
+          style={{ height: '420px', background: '#0d0b08' }}
         >
           {/* SVG map */}
           <svg
@@ -145,9 +146,6 @@ export default function LandingMapPreview() {
                     {node.label}
                   </p>
                   <p className="font-cormorant font-light text-cream text-sm">{node.name}</p>
-                  <p className="nmq-label mt-1" style={{ fontSize: '0.45rem' }}>
-                    {node.count} lights
-                  </p>
                 </div>
               )}
             </div>

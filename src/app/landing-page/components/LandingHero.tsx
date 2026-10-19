@@ -1,52 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function LandingHero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animFrameRef = useRef<number>(0);
-  const [lightCount, setLightCount] = useState<number | null>(null);
-
-  // Animate light count from live Supabase total (via /api/stats/lights)
-  useEffect(() => {
-    let cancelled = false;
-    let rafId = 0;
-
-    const runAnimation = (target: number) => {
-      if (cancelled || target <= 0) {
-        if (!cancelled) setLightCount(target);
-        return;
-      }
-      const duration = 2400;
-      const start = Date.now();
-      const tick = () => {
-        if (cancelled) return;
-        const elapsed = Date.now() - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setLightCount(Math.floor(eased * target));
-        if (progress < 1) rafId = requestAnimationFrame(tick);
-      };
-      rafId = requestAnimationFrame(tick);
-    };
-
-    fetch('/api/stats/lights')
-      .then((res) => (res.ok ? res.json() : Promise.reject(new Error('stats fetch failed'))))
-      .then((data: { total?: number }) => {
-        if (cancelled) return;
-        const total = typeof data.total === 'number' && data.total >= 0 ? data.total : 0;
-        setTimeout(() => runAnimation(total), 600);
-      })
-      .catch(() => {
-        if (!cancelled) setLightCount(0);
-      });
-
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(rafId);
-    };
-  }, []);
 
   // Three.js-style pyramid on canvas
   useEffect(() => {
@@ -201,7 +160,7 @@ export default function LandingHero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden overflow-x-hidden px-4 sm:px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div
         className="absolute inset-0"
@@ -212,15 +171,15 @@ export default function LandingHero() {
       />
 
       {/* Hero text */}
-      <div className="relative z-10 text-center w-full max-w-3xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
         {/* Pyramid canvas — compact, sits above title */}
-        <div className="flex justify-center mb-0 w-full" style={{ height: 'min(220px, 32vw)' }}>
+        <div className="flex justify-center mb-0" style={{ height: '220px' }}>
           <canvas
             ref={canvasRef}
             width={600}
             height={220}
-            className="opacity-90 w-full max-w-[600px] h-auto"
-            style={{ maxWidth: '100%', height: 'auto' }}
+            className="opacity-90"
+            style={{ maxWidth: '100%' }}
             aria-label="Animated low-poly pyramid with amber light particles drifting inside the wireframe mesh"
           />
         </div>
@@ -229,13 +188,13 @@ export default function LandingHero() {
           43°46′N · 21°50′E · RTANJ, SERBIA
         </p>
         <h1
-          className="nmq-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic mb-6 sm:mb-8 break-words"
+          className="nmq-heading text-5xl md:text-7xl lg:text-8xl italic mb-8"
           style={{ lineHeight: '1.05' }}
         >
           NoMoreQuiet
         </h1>
         <p className="nmq-body text-mist text-lg md:text-xl max-w-xl mx-auto mb-3" style={{ fontStyle: 'italic' }}>
-          The place where silence finally finds its voice.
+          The place where quiet finally finds its voice.
         </p>
         <p className="nmq-label mb-10 text-silence">
           Not therapy. Not coaching. A House.
@@ -250,14 +209,11 @@ export default function LandingHero() {
           </Link>
         </div>
 
-        {/* Live counter */}
+        {/* Pošten početak — bez izmišljenih brojeva (Koncept v2, pravilo 2) */}
         <div className="mt-12 flex items-center justify-center gap-3">
           <span className="light-dot pulse-amber" />
           <span className="nmq-label text-mist">
-            <span className="text-amber tabular-nums font-cormorant font-light text-xl" style={{ letterSpacing: '0.05em' }}>
-              {lightCount === null ? '—' : lightCount.toLocaleString()}
-            </span>
-            {' '}lights burning on the pyramid
+            The map is open · be one of the first lights
           </span>
         </div>
       </div>

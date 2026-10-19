@@ -9,7 +9,6 @@ interface MapSidebarProps {
   onSelectNode: (node: NodeData | null) => void;
   filterNode: NodeId | 'all';
   onFilterChange: (id: NodeId | 'all') => void;
-  totalLights: number;
 }
 
 export default function MapSidebar({
@@ -18,10 +17,9 @@ export default function MapSidebar({
   onSelectNode,
   filterNode,
   onFilterChange,
-  totalLights,
 }: MapSidebarProps) {
   return (
-    <div className="w-full md:w-72 xl:w-80 flex flex-col border-b md:border-b-0 md:border-r border-amber/10 bg-deep-earth/30 overflow-hidden shrink-0 max-h-[38vh] md:max-h-none">
+    <div className="w-72 xl:w-80 flex flex-col border-r border-amber/10 bg-deep-earth/30 overflow-hidden">
       {/* Header */}
       <div className="px-5 py-5 border-b border-amber/10">
         <p className="nmq-label mb-1" style={{ fontSize: '0.55rem', color: '#c8822a' }}>
@@ -29,7 +27,7 @@ export default function MapSidebar({
         </p>
         <p className="nmq-heading text-xl italic text-gold">Map of Lights</p>
         <p className="font-cormorant italic text-mist text-sm mt-1">
-          Seven nodes. {nodes.reduce((s, n) => s + n.lightCount, 0).toLocaleString()} lights burning.
+          Seven nodes. One House.
         </p>
       </div>
 
@@ -58,7 +56,7 @@ export default function MapSidebar({
               style={{ fontSize: '0.45rem' }}
               onClick={() => onFilterChange(node.id)}
             >
-              {node.name.toUpperCase().split(' ')[0]}
+              {node.name.replace(/^Mount\s+/i, '').toUpperCase().split(' ')[0]}
             </button>
           ))}
         </div>
@@ -99,17 +97,6 @@ export default function MapSidebar({
                   </p>
                 </div>
               </div>
-              <div className="text-right">
-                <p
-                  className="font-cormorant tabular-nums text-amber"
-                  style={{ fontSize: '1rem', fontWeight: 300 }}
-                >
-                  {node.lightCount.toLocaleString()}
-                </p>
-                <p className="nmq-label" style={{ fontSize: '0.4rem', color: '#5a4e40' }}>
-                  LIGHTS
-                </p>
-              </div>
             </div>
             <p className="font-cormorant italic text-mist text-xs leading-relaxed">
               {node.metaphor}
@@ -123,35 +110,11 @@ export default function MapSidebar({
 
       {/* Footer */}
       <div className="px-5 py-4 border-t border-amber/10">
-        <div className="flex items-center gap-2 mb-3">
-          <div
-            style={{
-              width: '5px',
-              height: '5px',
-              borderRadius: '50%',
-              background: '#D4AF37',
-              boxShadow: '0 0 8px rgba(212,175,55,0.9)',
-            }}
-          />
-          <p className="nmq-label" style={{ fontSize: '0.45rem', color: '#D4AF37' }}>
-            FOUNDING LIGHT
-          </p>
-          <div
-            className="ml-2"
-            style={{
-              width: '5px',
-              height: '5px',
-              borderRadius: '50%',
-              background: '#c8822a',
-              boxShadow: '0 0 6px rgba(200,130,42,0.7)',
-            }}
-          />
-          <p className="nmq-label" style={{ fontSize: '0.45rem', color: '#a89880' }}>
-            ACTIVE LIGHT
-          </p>
-        </div>
         <p className="font-cormorant italic text-silence text-xs">
           All paths lead to Rtanj.
+        </p>
+        <p className="nmq-label mt-3" style={{ fontSize: '0.4rem', color: '#5a4e40' }}>
+          A light is a sentence, not a score
         </p>
       </div>
     </div>

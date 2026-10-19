@@ -14,8 +14,10 @@ interface WinnerStory {
   };
 }
 
-const EMPTY_QUOTE =
-  '"Every great book begins with a single sentence written in silence. Yours is waiting to be heard."';
+// Koncept v2: ne izmišljamo tuđe riječi. Dok nema stvarnog pobjedničkog unosa,
+// govori sama Kuća — i to je jasno označeno.
+const EMPTY_LINE =
+  'Nothing has been written here yet. The first echo could be yours.';
 
 function getFirstTwoSentences(text: string): string {
   const cleaned = text.replace(/\n+/g, ' ').trim();
@@ -65,12 +67,12 @@ export default function FeaturedStoryWidget() {
         }}
       />
 
-      {/* Label */}
+      {/* Label — „Echo" samo kad je stvarni unos; inače govori Kuća */}
       <p
         className="text-xs uppercase tracking-widest mb-3"
         style={{ color: 'rgba(212,175,55,0.55)', fontFamily: 'Georgia, serif', letterSpacing: '0.18em' }}
       >
-        ✦ Featured Echo
+        {story ? 'Featured Echo' : 'From the House'}
       </p>
 
       {story ? (
@@ -117,12 +119,12 @@ export default function FeaturedStoryWidget() {
         </>
       ) : (
         <>
-          {/* Empty state — inspirational quote */}
+          {/* Prazno stanje — bez navodnika, jer ovo nije tuđi citat */}
           <p
             className="text-sm leading-relaxed mb-4 italic"
             style={{ color: 'rgba(232,220,200,0.60)', fontFamily: 'Georgia, serif' }}
           >
-            {EMPTY_QUOTE}
+            {EMPTY_LINE}
           </p>
 
           {/* CTA */}

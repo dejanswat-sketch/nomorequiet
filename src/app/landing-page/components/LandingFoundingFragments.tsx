@@ -1,17 +1,20 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
+// Koncept v2: ovo su PRIMJERI, ne unosi stvarnih ljudi.
+// Zato nema izmišljene starosti („312 days ago") — svaka kartica nosi labelu EXAMPLE.
 const fragments = [
-  { id: 'frag-001', text: 'I stopped explaining myself to people who weren\'t listening.', node: 'Rtanj', age: '312 days' },
-  { id: 'frag-002', text: 'The weight has a shape now. That\'s something.', node: 'Sedona', age: '289 days' },
-  { id: 'frag-003', text: 'I came here because I had nowhere else to put this.', node: 'Rtanj', age: '401 days' },
-  { id: 'frag-004', text: 'Quiet is not the same as peace. I\'m learning the difference.', node: 'Glastonbury', age: '178 days' },
-  { id: 'frag-005', text: 'Still here. Still carrying it. But less alone.', node: 'Kailash', age: '356 days' },
-  { id: 'frag-006', text: 'I don\'t know what I\'m waiting for. Maybe that\'s the point.', node: 'Shasta', age: '223 days' },
-  { id: 'frag-007', text: 'The stone is lighter when I say its name.', node: 'Rtanj', age: '445 days' },
-  { id: 'frag-008', text: 'Something moved today. I can\'t explain it. It moved.', node: 'Machu Picchu', age: '167 days' },
-  { id: 'frag-009', text: 'I wrote for the first time in years. It felt like breathing.', node: 'Es Vedrà', age: '198 days' },
+  { id: 'frag-001', text: 'I stopped explaining myself to people who weren\'t listening.', node: 'Rtanj' },
+  { id: 'frag-002', text: 'The weight has a shape now. That\'s something.', node: 'Sedona' },
+  { id: 'frag-003', text: 'I came here because I had nowhere else to put this.', node: 'Rtanj' },
+  { id: 'frag-004', text: 'Quiet is not the same as peace. I\'m learning the difference.', node: 'Glastonbury' },
+  { id: 'frag-005', text: 'Still here. Still carrying it. But less alone.', node: 'Kailash' },
+  { id: 'frag-006', text: 'I don\'t know what I\'m waiting for. Maybe that\'s the point.', node: 'Shasta' },
+  { id: 'frag-007', text: 'The stone is lighter when I say its name.', node: 'Rtanj' },
+  { id: 'frag-008', text: 'Something moved today. I can\'t explain it. It moved.', node: 'Machu Picchu' },
+  { id: 'frag-009', text: 'I wrote for the first time in years. It felt like breathing.', node: 'Es Vedrà' },
 ];
 
 export default function LandingFoundingFragments() {
@@ -51,12 +54,15 @@ export default function LandingFoundingFragments() {
           }`}
         >
           <p className="nmq-label mb-4" style={{ letterSpacing: '0.28em' }}>
-            VOICES FROM THE PYRAMID
+            THE FIRST LIGHTS
           </p>
           <h2 className="nmq-heading text-3xl md:text-4xl italic text-gold">
-            Anonymous fragments from those who wrote.
+            Nothing has been written here yet.
           </h2>
           <p className="nmq-body text-mist mt-4">
+            These are examples, so you can see what a light looks like — not the words of real people.
+          </p>
+          <p className="nmq-body text-mist mt-2">
             One sentence. It doesn&apos;t have to be beautiful. Just true.
           </p>
         </div>
@@ -90,7 +96,7 @@ export default function LandingFoundingFragments() {
             </span>
             <span className="w-px h-3 bg-silence" />
             <span className="nmq-label" style={{ fontSize: '0.55rem' }}>
-              Light #{activeIndex + 1} · {fragments?.[activeIndex]?.age} ago
+              Example · yours could be here
             </span>
           </div>
 
@@ -130,10 +136,20 @@ export default function LandingFoundingFragments() {
                 &ldquo;{frag?.text}&rdquo;
               </p>
               <p className="nmq-label mt-3" style={{ fontSize: '0.45rem', color: '#5a4e40' }}>
-                {frag?.age} ago
+                Example
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Poziv — jedina istinita stvar koju sada možemo reći */}
+        <div className="text-center mt-14">
+          <Link href="/sign-up-login-screen" className="ghost-btn px-10 py-3 inline-block">
+            Leave the first sentence
+          </Link>
+          <p className="nmq-label mt-5" style={{ fontSize: '0.5rem', color: '#5a4e40' }}>
+            Free to write · anonymous on the map
+          </p>
         </div>
       </div>
     </section>
